@@ -1,0 +1,14 @@
+(* heritage, sous-typage et liaison dynamique *)
+class Point = {
+  x : Nat;
+  y : Nat;
+  plus (p : Point) : Point = new Point {x = self#x + p#x; y = self#y + p#y};
+  somme (u : unit) : Nat = self#x + self#y
+} in
+class PointC extends Point = {
+  c : Nat;
+  somme (u : unit) : Nat = self#x + self#y + self#c
+} in
+let a = new Point {x = 1; y = 2} in
+let b = new PointC {x = 10; y = 20; c = 100} in
+a#plus(b)#somme() + b#somme()

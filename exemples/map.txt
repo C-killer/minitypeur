@@ -1,0 +1,4 @@
+(* map polymorphe, utilise sur deux types de listes *)
+let rec map f l = if empty l then [] else f (hd l) :: map f (tl l) in
+let incr x = x + 1 in
+{ entiers = map incr [1; 2; 3]; listes = map (fun l -> 0 :: l) [[]; [5]] }

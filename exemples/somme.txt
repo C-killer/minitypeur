@@ -1,0 +1,3 @@
+(* somme des entiers de 0 a n, avec let rec *)
+let rec somme n = if zero n then 0 else n + somme (n - 1) in
+somme 4

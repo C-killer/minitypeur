@@ -1,0 +1,4 @@
+(* exemple du sujet : refuse grace au polymorphisme faible *)
+let l = ref [] in
+let _ = l := [fun x -> x] in
+hd !l + 2
